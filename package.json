@@ -1,0 +1,29 @@
+{
+  "name": "yarn-tree",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:KnisterPeter/yarn-tree.git",
+  "author": "Markus Wolf <mail@markus-wolf.de>",
+  "license": "MIT",
+  "bin": {
+    "yarn-tree": "./dist/cli.js"
+  },
+  "scripts": {
+    "start": "node dist/cli",
+    "build": "tsc -b ."
+  },
+  "dependencies": {
+    "@yarnpkg/lockfile": "^1.1.0",
+    "source-map-support": "^0.5.19",
+    "yargs": "^16.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.6",
+    "@types/yargs": "^15.0.9",
+    "@types/yarnpkg__lockfile": "^1.1.4",
+    "prettier": "^2.1.2",
+    "type-fest": "^0.18.0",
+    "typescript": "^4.0.5"
+  },
+  "prettier": {}
+}
