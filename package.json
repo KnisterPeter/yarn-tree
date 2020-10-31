@@ -1,6 +1,6 @@
 {
   "name": "yarn-tree",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "repository": "git@github.com:KnisterPeter/yarn-tree.git",
   "author": "Markus Wolf <mail@markus-wolf.de>",
@@ -8,6 +8,9 @@
   "bin": {
     "yarn-tree": "./dist/cli.js"
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "start": "node dist/cli",
     "build": "tsc -b ."
