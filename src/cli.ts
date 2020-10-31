@@ -24,6 +24,10 @@ function createTreeTupleList(
       string: true,
       default: ".",
     })
+    .options("depth", {
+      number: true,
+      default: Number.MAX_VALUE,
+    })
     .usage("Usage: $0")
     .help("help")
     .alias("h", "help")
@@ -110,16 +114,18 @@ function createTreeTupleList(
     const isLast = isLastItem(i);
     const parentsIndent = parents.split("#").slice(1);
 
-    openColumns.splice(parentsIndent.length);
-    if (hasChildren) {
-      openColumns.push(!isLast);
+    if (parentsIndent.length < argv.depth) {
+      openColumns.splice(parentsIndent.length);
+      if (hasChildren) {
+        openColumns.push(!isLast);
+      }
+
+      const indent = parentsIndent
+        .map((_, n) => (openColumns[n] ? symbols.vertical : symbols.empty))
+        .join("");
+
+      console.log(`${indent}${isLast ? symbols.last : symbols.item}${item}`);
     }
-
-    const indent = parentsIndent
-      .map((_, n) => (openColumns[n] ? symbols.vertical : symbols.empty))
-      .join("");
-
-    console.log(`${indent}${isLast ? symbols.last : symbols.item}${item}`);
   }
 })().catch((e) => {
   setImmediate(() => {
