@@ -18,7 +18,7 @@
   "dependencies": {
     "@yarnpkg/lockfile": "^1.1.0",
     "source-map-support": "^0.5.19",
-    "yargs": "^16.1.0"
+    "yargs": "^17.0.0"
   },
   "devDependencies": {
     "@types/node": "14.14.43",
