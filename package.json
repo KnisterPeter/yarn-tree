@@ -21,7 +21,7 @@
     "yargs": "^17.0.0"
   },
   "devDependencies": {
-    "@types/node": "16.11.17",
+    "@types/node": "16.11.18",
     "@types/yargs": "17.0.8",
     "@types/yarnpkg__lockfile": "1.1.5",
     "prettier": "2.5.1",
